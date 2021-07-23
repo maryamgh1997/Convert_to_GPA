@@ -4,7 +4,8 @@ def convert_to_gpa():
 
 
     # Give the location of the file
-    loc = (r"C:\Users\ahmad\Desktop\Convert_to_GPA/Grades.xlsx")
+    dirname = os.path.dirname(__file__)
+    loc = os.path.join(dirname, r'Grades.xlsx')
     # To open Workbook
     wb = xlrd.open_workbook(loc)
     sheet = wb.sheet_by_index(0)
