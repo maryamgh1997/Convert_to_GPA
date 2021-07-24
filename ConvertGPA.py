@@ -45,9 +45,9 @@ def convert_to_gpa():
     # to calculate the total GPA of student
     total_gpa = sum(multiple_list)/sheet.cell_value(1, 3)
 
-    print(total_gpa)
+    print("total GPA is: " , total_gpa)
     print("")
-    print(gpa_list , al_grades)
+    print("List of Grades are:" , gpa_list , al_grades)
 
 
 convert_to_gpa()
