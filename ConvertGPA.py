@@ -16,6 +16,7 @@ def convert_to_gpa():
     multiple_list = []     # a list to store grade*credits in it
     gpa_list =[]           #a list to store grades
     al_grades = []         #a list to store american type grades (including A, B, C, D)
+    persian_list = []
 
 
     #to store grades of student in a list
@@ -42,11 +43,14 @@ def convert_to_gpa():
     # to make a multipication list to store grades*credits of each lesson in it
     for i in range(1, sheet.nrows):
         multiple_list.append(sheet.cell_value(i, 1)*gpa_list[i-1])
+        persian_list.append(sheet.cell_value(i, 1)*sheet.cell_value(i, 2))
 
     # to calculate the total GPA of student
     total_gpa = sum(multiple_list)/sheet.cell_value(1, 3)
+    total_persian_gpa = sum(persian_list)/sheet.cell_value(1, 3)
 
     print("total GPA is: " , total_gpa)
+    print("total Persian GPA is: " , total_persian_gpa)
     print("")
     print("List of Grades are:" , gpa_list , al_grades)
 
